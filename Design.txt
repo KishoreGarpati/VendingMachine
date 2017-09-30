@@ -2,10 +2,18 @@ Database:
 
 VendingMachine
 	Id--barcode
+	locationId
+
+machineInventory
+	Id--barcode
 	itemsList[]
   	itemId
-    quantity -- update quantity on every purchase
-	locationId
+    quantity
+
+mainInventory
+	itemList[]
+  	item
+    quantity
 Item
 	ItemId
 	name
@@ -22,6 +30,8 @@ User
 	contactNo
 	appOs
 	currentVersion
+  RegisteredTime
+  UpdatedTime
 Location
 	Id
 	zipCode
@@ -41,6 +51,16 @@ Database: Mongo DB
 App: Native/ReactJS
 Wireframe: https://wireframepro.mockflow.com
 
+
+Process flows:
+1.Loading machine from main inventory
+2.Unloading machine when user buys
+
+DataBase Modifications:
+1.Audit tables to capture history
+2.UserActivity Table
+3.Payment integration
+
 Algorithms:
 1. Algorithm to modify user locaion based on purchase history (if user registers with a different address than current gps location)
 2. Based on quantity in orders , update quantity in machine
@@ -48,3 +68,4 @@ Algorithms:
 Feature Expansion:
 1. order in advance and pickup with in 10 hrs (think and modify).
 2. Beacons/ pop up notifications when user is nearby a machine
+
