@@ -1,0 +1,50 @@
+Database:
+
+VendingMachine
+	Id--barcode
+	itemsList[]
+  	itemId
+    quantity -- update quantity on every purchase
+	locationId
+Item
+	ItemId
+	name
+	class
+	unitPrice
+	expDate
+User
+	Id
+	name
+	emailId
+	baseLocationId
+	age
+	gender
+	contactNo
+	appOs
+	currentVersion
+Location
+	Id
+	zipCode
+	gpsPossions
+	Address
+Orders
+	Id
+  userId
+  machineId
+	itemList[]
+  	itemId
+    quantity
+  dateTime
+  
+Backend: Python
+Database: Mongo DB
+App: Native/ReactJS
+Wireframe: https://wireframepro.mockflow.com
+
+Algorithms:
+1. Algorithm to modify user locaion based on purchase history (if user registers with a different address than current gps location)
+2. Based on quantity in orders , update quantity in machine
+
+Feature Expansion:
+1. order in advance and pickup with in 10 hrs (think and modify).
+2. Beacons/ pop up notifications when user is nearby a machine
